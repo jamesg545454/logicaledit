@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Skin>
+  <Resources>
+    <Image name="background" url="images/background.png"/>
+  </Resources>
+
+  <Styles>
+      <!--<Style name="MySlider" inherit="Standard.AddIn.Slider"/>-->
+      <Style name="MyButton" inherit="Standard.AddIn.Button"/>
+      <Style name="MyEditBox" inherit="Standard.AddIn.EditBox"/>
+    
+      <Style name="BlueText">
+           <Font  name="textfont"   size="9" style="bold"/>
+           <Color name="textcolor"  color="#66ccff"/>
+      </Style>
+
+      <Style name="BlackBG">
+          <Font  name="textfont"   themeid="PresonusUI" size="12" />
+          <Color name="textcolor"  color="#f2f2f2" />
+          <Color name="backcolor"	color="#000000"/>
+      </Style>
+
+      <Style name="Text">
+          <Font  name="textfont"   themeid="PresonusUI" size="12" />
+          <Color name="textcolor"  color="#f2f2f2" />
+      </Style>
+
+  </Styles>
+
+  <Forms>
+    <Form name="LogicalEditor" title="Midi Logical Editor" image="background"  buttons="close" width="406" height="400" windowstyle="dialogstyle restorepos" >
+
+
+  <!--*************************************************************************
+                                  HEADER BUTTONS
+      *************************************************************************-->
+         <View size="311,11,80,30">
+              <Button name="buttonStoreDefault" title="Default"  tooltip="Save as default setup"  height="20" width="75"   style="MyButton"/>   
+        </View>
+     
+    <!--*************************************************************************
+                                  FIRST EDIT OPTION
+        *************************************************************************-->
+        <View size="29,58,100,30">
+          <RadioButton name="editOption" title="If Pitch =" value="0" style="MyButton"/>
+        </View>
+        <!--first filter edit boxes for OR conditions-->
+        <View size="107,57,100,30">
+          <EditBox name="Pitch1" height="20" width="50"  style="BlackBG"/>
+        </View>
+        <View size="175,59,100,30">
+          <Label title="Or"  style="MyButton"/>
+        </View>
+        <View size="217,57,100,30">
+          <EditBox name="Pitch2" height="20" width="50"  style="BlackBG"/>
+        </View>
+          <View size="290,59,100,30">
+          <Label title="Or"  style="MyButton"/>
+        </View>
+        <View size="328,57,100,30">
+          <EditBox name="Pitch3" height="20" width="50"  style="BlackBG"/>
+        </View>
+
+    <!--*************************************************************************
+                                SECOND EDIT OPTION
+        *************************************************************************-->
+        <View size="29,100,200,30">
+          <RadioButton name="editOption" title="If Pitch is Higher Than" value="1" style="MyButton"/>
+        </View>
+        <View size="170,100,100,30">
+          <EditBox name="Pitch4" height="20" width="50"  style="BlackBG"/>
+        </View>
+        <View size="230,102,200,30">
+          <Label title="and Lower Than" value="1" style="MyButton"/>
+        </View>
+        <View size="328,100,100,30">
+          <EditBox name="Pitch5" height="20" width="50"  style="BlackBG"/>
+        </View>
+        <View size="175,124,200,30">
+          <Label title="and Velocity is Lower Than" value="1" style="MyButton"/>
+        </View>
+        <View size="328,122,100,30">
+          <EditBox name="Velocity1" height="20" width="50"   style="BlackBG"/>
+        </View>
+
+    <!--*************************************************************************
+                                THIRD EDIT OPTION
+        *************************************************************************-->
+       <View size="29,161,200,30">
+        <RadioButton name="editOption" title="If Pitch is Higher Than" value="2" style="MyButton"/>
+        </View>
+
+        <View size="170,161,100,30">
+          <EditBox name="Pitch6" height="20" width="50"  style="BlackBG"/>
+        </View>
+        <View size="230,164,200,30">
+          <Label title="and Lower Than" value="1" style="MyButton"/>
+        </View>
+        <View size="328,161,100,30">
+          <EditBox name="Pitch7" height="20" width="50"   style="BlackBG"/>
+        </View>
+        <View size="174,185,200,30">
+          <Label title="and Velocity is Higher Than" value="1" style="MyButton"/>
+        </View>
+      
+        <View size="328,183,100,30">
+          <EditBox name="Velocity2" height="20" width="50"   style="BlackBG"/>
+        </View>
+
+    <!--*************************************************************************
+                                FOURTH EDIT OPTION
+        *************************************************************************-->
+        <View size="29,225,200,30">
+          <RadioButton name="editOption" title="If Pitch is Higher Than" value="3" style="MyButton"/>
+        </View>
+        <View size="170,225,100,30">
+          <EditBox name="Pitch8" height="20" width="50"   style="BlackBG"/>
+        </View>
+        <View size="230,227,200,30">
+          <Label title="and Lower Than" value="1" style="MyButton"/>
+        </View>
+        <View size="328,225,100,30">
+          <EditBox name="Pitch9" height="20" width="50"   style="BlackBG"/>
+        </View>
+        <View size="174,249,200,30">
+          <Label title="and Velocity is Higher Than" value="1" style="MyButton"/>
+        </View>
+        <View size="328,247,100,30">
+          <EditBox name="Velocity3" height="20" width="50"   style="BlackBG"/>
+        </View>
+        <View size="175,271,200,30">
+          <Label title="and Velocity is Lower Than" value="1" style="MyButton"/>
+        </View>
+        <View size="328,269,100,30">
+          <EditBox name="Velocity4" height="20" width="50"   style="BlackBG"/>
+        </View>
+
+  <!--*************************************************************************
+                              EXECUTE EDIT
+      *************************************************************************-->
+      <View size="92,315,50,30">
+        <EditBox name="changePitch" height="20" width="25"  style="BlackBG"/>
+      </View>
+
+      <View size="163,315,50,30">
+        <EditBox name="changeVelocity" height="20" width="30"  style="BlackBG"/>
+      </View>
+  
+      <View size="230,316,200,30">
+        <CheckBox name="randomVelocityChk"  style="MyButton"/>
+      </View>
+      <View size="273,315,50,30">
+        <EditBox name="randomLowVelocity" height="20" width="30" style="BlackBG" />
+      </View>
+      <View size="338,315,50,30">
+        <EditBox name="randomHighVelocity" height="20" width="30" style="BlackBG"/>
+      </View>
+      <View size="32,335,200,30">
+        <CheckBox name="selectOnlyChk" title="Select Filter" tooltip="Select only for manual edit" style="MyButton"/>
+      </View>
+      <View size="230,336,200,30">
+        <CheckBox name="compressVelocityChk"  style="MyButton"/>
+      </View>
+      <View size="273,335,50,30">
+        <EditBox name="compressLowVelocity" height="20" width="30" style="BlackBG" />
+      </View>
+      <View size="338,335,50,30">
+        <EditBox name="compressHighVelocity" height="20" width="30" style="BlackBG"/>
+      </View>
+      <View size="20,370,140,30">
+        <Button name="buttonRestore" title="Restore" height="20" tooltip="Restore initial selection" width="75" style="MyButton"/>
+      </View>
+      <View size="311,370,140,30">
+        <Button name="buttonExecuteEdit" title="Apply" height="20" width="75" tooltip="Apply edits from filter" style="MyButton"/>
+      </View>
+
+    </Form>
+  </Forms>
+</Skin>
+
+
+
+
