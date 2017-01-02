@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ClassFactory>
+  
+  <!--Logical Editor-->
+  <ScriptClass
+     classID="{674CAA05-5BB6-4D3A-B5BA-6EC6DF4876C0}"
+     category="EditTask"
+     subCategory ="MusicEdit"
+     name="Logical Editor..."
+     sourceFile="logicaledit.js"
+     functionName="beginEdit"
+     metaClassID="{7DF57C34-F53F-41BC-AE32-635331CDD709}">
+    <Attribute id="menuPriority" value="0"/>
+  </ScriptClass>
+  
+</ClassFactory>
+
+
+
