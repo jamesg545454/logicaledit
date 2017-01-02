@@ -30,7 +30,6 @@
   <Forms>
     <Form name="LogicalEditor" title="Midi Logical Editor" image="background"  buttons="close" width="406" height="400" windowstyle="dialogstyle restorepos" >
 
-
   <!--*************************************************************************
                                   HEADER BUTTONS
       *************************************************************************-->
