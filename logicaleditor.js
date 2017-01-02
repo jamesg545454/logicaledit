@@ -1,8 +1,9 @@
 /*
     PreSonus Studio One Midi Logical Editor version 1.0.1
-
+    Adds basic midi logical editing to Studio One http://www.presonus.com/products/Studio-One
     Creator Info
     Email: expressmix@att.net
+    http://theaudiocave.com/le
     Studio One User Forum Profile: https://forums.presonus.com/memberlist.php?mode=viewprofile&u=282
 
     Credits:
