@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaInformation>
-  <Attribute id="Package:ID" value="lawrence.logical.editor"/>
-  <Attribute id="Package:SkinFile" value="skin/"/>
-  <Attribute id="Package:Version" value="1.0.1"/>
-  <Attribute id="Package:Email" value="expressmix@att.net"/>
-  
+    <Attribute id="Package:ID" value="lawrence.logical.editor"/>
+    <Attribute id="Package:SkinFile" value="skin/"/>
+    <Attribute id="Package:Version" value="1.0.1"/>
+    <Attribute id="Package:Email" value="expressmix@att.net"/> 
 </MetaInformation>
