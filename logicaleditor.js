@@ -103,11 +103,10 @@ function performTask() {
                 return Host.Results.kResultFailed;
  
             // editor command.  execute, temp disable selection in editors
-            // this may be the only way to real time update   
             context.functions.executeImmediately = true;
 
             // this may be the only way to real time update, to disable
-            // selection and then re-enable, causing a refresh?
+            // selection and then re-enable later, causing a refresh?
             context.editor.showSelection(false);
             context.editor.selection.showHideSuspended = true;
 
