@@ -1,4 +1,4 @@
-const kPackageID = "lawrence.logical.editor";
+const kPackageID = "audiocave.logical.editor";
 
 function performTask() {
 
