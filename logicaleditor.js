@@ -110,8 +110,8 @@ function performTask() {
             context.editor.showSelection(false);
             context.editor.selection.showHideSuspended = true;
 
-            // the iterator is used multiple times per session some
-            // always set .first() for every Apply action
+            // the iterator may be used multiple times per session so
+            // always set .first() for every Apply action instance
             iterator.first();
 
             // ***********************************************************************************************************
