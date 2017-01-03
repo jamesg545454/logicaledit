@@ -9,7 +9,7 @@
 
     Credits:
     Thanks to Narech Kontcell for discovering some of the methods being used here that allow these edits to happen.
-    http://narechk.net/  This productwas inspired by Studio One X.  studioonex.narechk.net
+    http://narechk.net/  This product was inspired by Studio One X.  studioonex.narechk.net
 */
 
 // PackageID is used to indentify the package for things like skins.
