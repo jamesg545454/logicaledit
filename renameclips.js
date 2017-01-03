@@ -43,7 +43,9 @@ function performTask() {
                                                 clips.push(clip);                                              
                                         }        
 
-                                        // for some unknow reason the iteration above runs backwards? so...
+                                        // for some unknown reason the iteration above results in
+                                        // the numeric series being reversed, so throw it into an 
+                                        // array and reverse the array then iterate the array.
                                         clips.reverse();
 
                                         for (i = 0; i < clips.length; i++){
