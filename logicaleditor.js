@@ -1,20 +1,22 @@
 /*
-    Midi Logical Editor version 1.0.1
-    Adds basic midi logical editing to PreSonus Studio One 
-    http://www.presonus.com/products/Studio-One
-    
-    Author:
+    PreSonus Studio One Midi Logical Editor version 1.0.2
+
+    Creator Info
     Email: expressmix@att.net
-    http://theaudiocave.com/le
     Studio One User Forum Profile: https://forums.presonus.com/memberlist.php?mode=viewprofile&u=282
 
     Credits:
-    Thanks to Narech Kontcell for discovering some of the methods being used here that allow these edits to happen.
-    http://narechk.net/  This product was inspired by Studio One X.  studioonex.narechk.net
+    Thanks to Narech Kontcell for discovering some of the methods being  used here that allow these edits to happen.
+    http://narechk.net/
+
+    Changes:
+    1.0.1  Added optional selection mirroring to Action section
+    1.0.2  Added an unrelated menu / action to the package for custom clip renaming [Event | Rename Clips...]
+
 */
 
 // PackageID is used to indentify the package for things like skins.
-const kPackageID = "audiocave.logical.editor";
+const kPackageID = "lawrence.logical.editor";
 
 // used to parse which option the user has set in the editor, 1-127 or 1-100%
 var MaxVelocity;
@@ -25,7 +27,6 @@ function performTask() {
         [
             Host.Interfaces.IController,
             Host.Interfaces.IParamObserver,
-            Host.Interfaces.IObserver,
             Host.Interfaces.IEditTask
         ];
 
@@ -104,15 +105,16 @@ function performTask() {
                 return Host.Results.kResultFailed;
  
             // editor command.  execute, temp disable selection in editors
+            // this may be the only way to real time update   
             context.functions.executeImmediately = true;
 
             // this may be the only way to real time update, to disable
-            // selection and then re-enable later, causing a refresh?
+            // selection and then re-enable, causing a refresh?
             context.editor.showSelection(false);
             context.editor.selection.showHideSuspended = true;
 
-            // the iterator may be used multiple times per session so
-            // always set .first() for every Apply action instance
+            // the iterator is used multiple times per session some
+            // always set .first() for every Apply action
             iterator.first();
 
             // ***********************************************************************************************************
@@ -734,6 +736,7 @@ function performTask() {
         }
         // ***************************************************************************************************
 
+
         this.buttonStoreDefault = this.paramList.addInteger(0, 1, "buttonStoreDefault");
         this.buttonRestore = this.paramList.addInteger(0, 1, "buttonRestore");
         this.buttonExecuteEdit = this.paramList.addInteger(0, 1, "buttonExecuteEdit");
@@ -782,3 +785,5 @@ function beginEdit()
 {
     return new performTask;
 }
+
+
