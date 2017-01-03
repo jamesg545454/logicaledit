@@ -16,7 +16,7 @@
 */
 
 // PackageID is used to indentify the package for things like skins.
-const kPackageID = "lawrence.logical.editor";
+const kPackageID = "audiocave.logical.editor";
 
 // used to parse which option the user has set in the editor, 1-127 or 1-100%
 var MaxVelocity;
