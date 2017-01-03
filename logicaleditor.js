@@ -1,5 +1,5 @@
 /*
-    PreSonus Studio One Midi Logical Editor version 1.0.1
+    Midi Logical Editor version 1.0.1
     Adds basic midi logical editing to Studio One http://www.presonus.com/products/Studio-One
     
     Author:
