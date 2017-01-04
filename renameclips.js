@@ -113,7 +113,7 @@ function performTask() {
                 this.renameOption.appendString("DashNum");
                 this.renameOption.appendString("Paren");
                 
-                // Apply button
+                // apply button
                 this.buttonApply = this.paramList.addInteger(0, 1, "buttonApply");
         }
 
