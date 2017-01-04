@@ -540,7 +540,7 @@ function performTask() {
         
         var defaultValues = new Array;
         
-        defaultValues.push(String(this.Pitch1.value));
+        defaultValues.push(String(this.Pitch1.string));
         defaultValues.push(String(this.Pitch2.string));
         defaultValues.push(String(this.Pitch3.string));
         defaultValues.push(String(this.Pitch4.string));
