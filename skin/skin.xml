@@ -36,7 +36,7 @@
             <EditBox name="New Name"  width="125" height="20" style="MyEditBox"/>
 
             <Label title="" height="5" />
-            <RadioButton name="renameOption" title="No Appending "  value="0"   style="MyButton" />
+            <RadioButton name="renameOption" title="None"  value="0"   style="MyButton" />
             <RadioButton name="renameOption" title="Prefix # - Name  "  value="1"  tooltip="Example: 01 - Piano" style="MyButton" />
             <RadioButton name="renameOption" title="Append Name #  "  value="2"  tooltip="Example: Piano 09" style="MyButton" />
             <RadioButton name="renameOption" title="Append Name - #"  value="3"  tooltip="Example: Piano - 09" style="MyButton" />
