@@ -7,7 +7,7 @@
 
     Credits:
     Thanks to Narech Kontcell for discovering and templateing some of the methods being  used here that allow these edits to happen.
-    http://narechk.net/
+    http://narechk.net/.  This package was inspired by Studio One X.  http://studioonex.narechk.net/index_en.html
 
     Changes:
     1.0.1  Added optional selection mirroring to Action section
