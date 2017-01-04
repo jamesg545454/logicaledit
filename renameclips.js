@@ -1,6 +1,6 @@
 /* 
     This script and it's accompanying xml form brings more flexible clip
-    series numeric renaming to Studio One.
+    nueric series renaming to Studio One.
 */
 
 const kPackageID = "audiocave.logical.editor";
