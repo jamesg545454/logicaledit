@@ -2,6 +2,6 @@
 <MetaInformation>
     <Attribute id="Package:ID" value="audiocave.logical.editor"/>
     <Attribute id="Package:SkinFile" value="skin/"/>
-    <Attribute id="Package:Version" value="1.0.1"/>
+    <Attribute id="Package:Version" value="1.0.3"/>
     <Attribute id="Package:Email" value="expressmix@att.net"/> 
 </MetaInformation>
