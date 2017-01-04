@@ -123,7 +123,7 @@ function performTask() {
 
         }
         
-        // messabox shothand
+        // message box shorthand
         function msg(value) {
                 Host.GUI.alert(value);
         }
