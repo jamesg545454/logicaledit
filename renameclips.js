@@ -104,14 +104,15 @@ function performTask() {
 
                 this.newName = this.paramList.addString("New Name");
 
-                // radio buttons (rename clips)
+                // radio buttons
                 this.renameOption = this.paramList.addList("renameOption");
                 this.renameOption.appendString("none");
                 this.renameOption.appendString("Prefix");
                 this.renameOption.appendString("Num");
                 this.renameOption.appendString("DashNum");
                 this.renameOption.appendString("Paren");
-
+                
+                // Apply button
                 this.buttonApply = this.paramList.addInteger(0, 1, "buttonApply");
         }
 
