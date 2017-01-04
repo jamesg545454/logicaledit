@@ -2,6 +2,7 @@
 <Skin>
   <Resources>
     <Image name="background" url="images/background.png"/>
+     <Image name="gray_bg" url="images/gray_bg.png"/>
   </Resources>
 
   <Styles>
@@ -28,7 +29,7 @@
   </Styles>
   <Forms>
   
-  <Form name="RenameClips" title="Rename Clips"  buttons="close" width="200" height="205" windowstyle="dialogstyle restorepos" >
+  <Form name="RenameClips" title="Rename Clips" image="gray_bg" buttons="close" width="200" height="202" windowstyle="dialogstyle restorepos" >
       <View size="40,10,150,220">
          <Vertical spacing="2" margin="0">
            
@@ -200,3 +201,5 @@
   </Forms>
 </Skin>
 
+   
+    
