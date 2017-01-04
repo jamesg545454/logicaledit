@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Skin>
   <Resources>
     <Image name="background" url="images/background.png"/>
@@ -26,9 +26,32 @@
       </Style>
 
   </Styles>
-
   <Forms>
+  
+  <Form name="RenameClips" title="Rename Clips"  buttons="close" width="200" height="205" windowstyle="dialogstyle restorepos" >
+      <View size="40,10,150,220">
+         <Vertical spacing="2" margin="0">
+           
+            <Label title="Name" height="20" />
+            <EditBox name="New Name"  width="125" height="20" style="MyEditBox"/>
+
+            <Label title="" height="5" />
+            <RadioButton name="renameOption" title="No Appending "  value="0"   style="MyButton" />
+            <RadioButton name="renameOption" title="Prefix # - Name  "  value="1"  tooltip="Example: 01 - Piano" style="MyButton" />
+            <RadioButton name="renameOption" title="Append Name #  "  value="2"  tooltip="Example: Piano 09" style="MyButton" />
+            <RadioButton name="renameOption" title="Append Name - #"  value="3"  tooltip="Example: Piano - 09" style="MyButton" />
+            <RadioButton name="renameOption" title="Append Name (#)"  value="4"  tooltip="Example: Piano (09)"  style="MyButton" />
+            <Label title="" height="5" />
+            <Button name="buttonApply" title="Apply" width="125" height="20" style="MyButton"/>
+
+
+        </Vertical>
+      </View>
+    </Form>
+
+  
     <Form name="LogicalEditor" title="Midi Logical Editor" image="background"  buttons="close" width="406" height="400" windowstyle="dialogstyle restorepos" >
+
 
   <!--*************************************************************************
                                   HEADER BUTTONS
@@ -176,7 +199,4 @@
     </Form>
   </Forms>
 </Skin>
-
-
-
 
