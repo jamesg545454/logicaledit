@@ -102,6 +102,7 @@ function performTask() {
                 this.paramList = Host.Classes.createInstance("CCL:ParamList");
                 this.paramList.controller = this;
 
+                // edit box
                 this.newName = this.paramList.addString("New Name");
 
                 // radio buttons
