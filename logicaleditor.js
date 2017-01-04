@@ -1,5 +1,5 @@
 /*
-    PreSonus Studio One Midi Logical Editor version 1.0.2
+    PreSonus Studio One Midi Logical Editor version 1.0.3
 
     Author:
     Email: expressmix@att.net
@@ -12,6 +12,7 @@
     Changes:
     1.0.1  Added optional selection mirroring to Action section
     1.0.2  Added an unrelated menu / action to the package for custom clip renaming [Event | Rename Clips...]
+    1.0.3  Added a gray background to Rename Clips to be more in line with the default UI dialog design.
 
 */
 
