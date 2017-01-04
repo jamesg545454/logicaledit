@@ -1,15 +1,15 @@
 /*
     PreSonus Studio One Midi Logical Editor version 1.0.3
 
-    Author Info:
+    Author Info
     Email: expressmix@att.net
     Studio One User Forum Profile: https://forums.presonus.com/memberlist.php?mode=viewprofile&u=282
 
-    Credits:
+    Credits
     Thanks to Narech Kontcell for discovering and templateing some of the methods being  used here that allow these edits to happen.
     http://narechk.net/.  This package was inspired by Studio One X.  http://studioonex.narechk.net/index_en.html
 
-    Changes:
+    Changes
     1.0.1  Added optional selection mirroring to Action section
     1.0.2  Added an unrelated menu / action to the package for custom clip renaming [Event | Rename Clips...]
     1.0.3  Added a gray background to Rename Clips to be more consistent with the default UI dialog design.
