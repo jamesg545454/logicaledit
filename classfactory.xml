@@ -9,8 +9,8 @@
       name="Logical Editor..."
       sourceFile="logicaledit.js"
       functionName="beginEdit"
+      metaClassID="{7DF57C34-F53F-41BC-AE32-635331CDD709}"> 
       <Attribute id="menuPriority" value="0"/>
-      metaClassID="{7DF57C34-F53F-41BC-AE32-635331CDD709}">      
   </ScriptClass>
  
  <!-- Rename Clips-->
@@ -21,8 +21,8 @@
       name="Rename Clips..."
       sourceFile="renameclips.js"
       functionName="beginEdit"
+      metaClassID="{4F1E2E0C-DBDE-4BA8-BDA9-08342C3D772D}">
       <Attribute id="menuPriority" value="1"/>
-      metaClassID="{4F1E2E0C-DBDE-4BA8-BDA9-08342C3D772D}">     
   </ScriptClass>
   
 </ClassFactory>
