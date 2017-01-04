@@ -6,7 +6,7 @@
     Studio One User Forum Profile: https://forums.presonus.com/memberlist.php?mode=viewprofile&u=282
 
     Credits:
-    Thanks to Narech Kontcell for discovering some of the methods being  used here that allow these edits to happen.
+    Thanks to Narech Kontcell for discovering and templateing some of the methods being  used here that allow these edits to happen.
     http://narechk.net/
 
     Changes:
