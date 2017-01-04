@@ -774,7 +774,15 @@ function performTask() {
 
         context.functions.executeImmediately = true;
 
-        // run the UI
+        /*  Launch the UI
+            The nagging question is how to run a non-modal form, which would work better.
+            You can see an example of one in the Soundcloud extension which runs normal,
+            not application modal.  "Dialog" in and of itself may imply modality and there
+            might be another method runForm() or something which allows that, but the 
+            Soundcloud extension is protected and can't be studied.
+            
+            TODO:   Try various guesses below and see if I get lucky.
+        */
         Host.GUI.runDialog(Host.GUI.Themes.getTheme(kPackageID), "LogicalEditor", this);
 
         return Host.Results.kResultOk;
