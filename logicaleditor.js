@@ -771,7 +771,8 @@ function performTask() {
             var event = iterator.next()
             this.originalSelection.push(event)
         }
-
+        
+        // *** likely unnecessary here, it happens in the functions that need it anyway
         context.functions.executeImmediately = true;
 
         /*  Launch the UI
