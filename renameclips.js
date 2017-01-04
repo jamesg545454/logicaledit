@@ -122,10 +122,10 @@ function performTask() {
                 return Host.Results.kResultOk;
 
         }
-
+        
+        // messabox shothand
         function msg(value) {
                 Host.GUI.alert(value);
-
         }
 }
 
