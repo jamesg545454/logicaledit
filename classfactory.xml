@@ -22,7 +22,7 @@
       sourceFile="renameclips.js"
       functionName="beginEdit"
       metaClassID="{4F1E2E0C-DBDE-4BA8-BDA9-08342C3D772D}">
-      <Attribute id="menuPriority" value="1"/>
+      <Attribute id="menuPriority" value="0"/>
   </ScriptClass>
   
 </ClassFactory>
