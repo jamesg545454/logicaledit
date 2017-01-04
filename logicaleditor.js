@@ -589,7 +589,7 @@ function performTask() {
         }
 
         if (defaultValues.length >= 13) {
-            this.Pitch1.value =    defaultValues[0]
+            this.Pitch1.string =   defaultValues[0]
             this.Pitch2.string =   defaultValues[1]
             this.Pitch3.string =   defaultValues[2]
             this.Pitch4.string =   defaultValues[3]
