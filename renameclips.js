@@ -127,6 +127,10 @@ function performTask() {
         function msg(value) {
                 Host.GUI.alert(value);
         }
+    
+        function Msg(value) {
+            Host.GUI.alert(String(value));
+        }
 }
 
 function beginEdit() {
