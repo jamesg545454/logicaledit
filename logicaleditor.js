@@ -1,5 +1,5 @@
 /*
-    PreSonus Studio One Midi Logical Editor version 1.0.3
+    Midi Logical Editor version 1.0.3   (for PreSonus Studio One)
 
     Author Info
     Email: expressmix@att.net
