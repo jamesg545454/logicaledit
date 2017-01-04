@@ -1,19 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ClassFactory>
   
   <!--Logical Editor-->
   <ScriptClass
-     classID="{674CAA05-5BB6-4D3A-B5BA-6EC6DF4876C0}"
-     category="EditTask"
-     subCategory ="MusicEdit"
-     name="Logical Editor..."
-     sourceFile="logicaledit.js"
-     functionName="beginEdit"
-     metaClassID="{7DF57C34-F53F-41BC-AE32-635331CDD709}">
-    <Attribute id="menuPriority" value="0"/>
+      classID="{674CAA05-5BB6-4D3A-B5BA-6EC6DF4876C0}"
+      category="EditTask"
+      subCategory="MusicEdit"
+      name="Logical Editor..."
+      sourceFile="logicaledit.js"
+      functionName="beginEdit"
+      metaClassID="{7DF57C34-F53F-41BC-AE32-635331CDD709}">
+      <Attribute id="menuPriority" value="0"/>
   </ScriptClass>
  
+ <!-- Rename Clips-->
+  <ScriptClass
+      classID="{E2D9F952-5C3E-466F-B2A7-29893D204823}"
+      category="EditTask"
+      subCategory="EventEdit"
+      name="Rename Clips..."
+      sourceFile="renameclips.js"
+      functionName="beginEdit"
+      metaClassID="{4F1E2E0C-DBDE-4BA8-BDA9-08342C3D772D}">
+      <Attribute id="menuPriority" value="1"/>
+  </ScriptClass>
+  
 </ClassFactory>
-
-
 
