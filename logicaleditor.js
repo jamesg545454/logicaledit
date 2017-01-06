@@ -46,7 +46,9 @@ function performTask() {
                 this.context.editor.showSelection(true);
             }
         }
-
+         /* check boxes are being used instead of radio buttons because 
+            I plan to allowing combining multiple filters later  */
+        
         // toggle the check boxes acting as option buttons
         if (param.name == "selectOnlyChk") {
             this.compressVelocityChk.setValue(0);
