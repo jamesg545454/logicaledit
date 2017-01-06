@@ -1,22 +1,22 @@
 /*
-    Midi Logical Editor 1.0.3   (for PreSonus Studio One)
+    PreSonus Studio One Midi Logical Editor version 1.0.3
 
-    Author Info
+    Creator Info
     Email: expressmix@att.net
     Studio One User Forum Profile: https://forums.presonus.com/memberlist.php?mode=viewprofile&u=282
 
-    Credits
-    Thanks to Narech Kontcell for discovering and templateing some of the methods being  used here that allow these edits to happen.
-    http://narechk.net/.  This package was inspired by Studio One X.  http://studioonex.narechk.net/index_en.html
+    Credits:
+    Thanks to Narech Kontcell for discovering some of the methods being  used here that allow these edits to happen.
+    http://narechk.net/
 
-    Changes
+    Changes:
     1.0.1  Added optional selection mirroring to Action section
     1.0.2  Added an unrelated menu / action to the package for custom clip renaming [Event | Rename Clips...]
-    1.0.3  Added a gray background to Rename Clips to be more consistent with the default UI dialog design.
+    1.0.3  Added a gray background to Rename Clips to be more in line with the default UI dialog design.
 */
 
 // PackageID is used to indentify the package for things like skins.
-const kPackageID = "audiocave.logical.editor";
+const kPackageID = "lawrence.logical.editor";
 
 // used to parse which option the user has set in the editor, 1-127 or 1-100%
 var MaxVelocity;
@@ -46,9 +46,7 @@ function performTask() {
                 this.context.editor.showSelection(true);
             }
         }
-         /* check boxes are being used instead of radio buttons because 
-            I plan to allowing combining multiple filters later  */
-        
+
         // toggle the check boxes acting as option buttons
         if (param.name == "selectOnlyChk") {
             this.compressVelocityChk.setValue(0);
@@ -96,7 +94,7 @@ function performTask() {
             // create array to hold the filtered items for the view selection option
             this.filterAry = [];
 
-            // this.context is set on start to capture the current context
+            // this.context is created on start to capture the current context
             var context = this.context
             var editor = context.editor;
             var iterator = context.iterator;
@@ -106,14 +104,16 @@ function performTask() {
             if (!editor || !iterator || !functions)
                 return Host.Results.kResultFailed;
  
+            // editor command.  execute, temp disable selection in editors
+            // this may be the only way to real time update   
             context.functions.executeImmediately = true;
 
             // this may be the only way to real time update, to disable
-            // selection and then re-enable, causing a refresh(?)
+            // selection and then re-enable, causing a refresh?
             context.editor.showSelection(false);
             context.editor.selection.showHideSuspended = true;
 
-            // the iterator is used multiple times per session
+            // the iterator is used multiple times per session some
             // always set .first() for every Apply action
             iterator.first();
 
@@ -121,11 +121,6 @@ function performTask() {
             //                                       BEGIN PARSING EDIT FILTERS
             // ***********************************************************************************************************
             switch (this.editOption.string) {
-                // Pitches 1, 2, 3 are all in the first filter
-                // the code for all three things is the same and can perhaps 
-                // be reduced more by pushing more of it to common functions
-
-                // the commenting here is applicable to all three pitch code blocks
 
                 // ─────────────────────  FILTER 1  ──────────────────────────────────────────────────────────────────────
                 case "1":
@@ -136,8 +131,8 @@ function performTask() {
                         // looking at the next selected event
                         var event = iterator.next();
 
-                        // ----------- if Pitch 1 matches the event pitch, hit ------------------------------------------
-                        if (this.Pitch1.value == event.pitch) {
+                        // ----------- if Pitch 1, 2 or 3 matches the event pitch ------------------------------------------
+                        if (this.Pitch1.value == event.pitch || this.Pitch2.value == event.pitch || this.Pitch3.value == event.pitch) {
                             
                             // put the event into the selection array
                             this.filterAry.push(event);
@@ -153,7 +148,7 @@ function performTask() {
 
                             //////////  RANDOMIZE VELOCITY /////////////////////////////
                             // if the randomize check box is checked, get a random value
-                            // getRandomVelocity() is in the Helper Functions section
+                            // getRandomVelocity() is in te Helper Functions section
                             if (this.randomVelocityChk.value == 1) {
                                 var value = this.getRandomVelocity();
                                 functions.modifyVelocity(event, value);
@@ -199,92 +194,6 @@ function performTask() {
                             // because every section above uses continue; if the code gets here
                             // it means that no other velocity option was checked 
                             
-                            if (this.changeVelocity.value != 0) {
-                                value = this.getVelocity(event.velocity);
-                                functions.modifyVelocity(event, value);
-                                continue;
-                            }
-                        }
-
-                        // ------------------------------------------------------------------------
-                        if (this.Pitch2.value == event.pitch) {
-                            this.filterAry.push(event);
-
-                            value = this.getNewPitch(event.pitch);
-                            if (value != event.pitch) {
-                                functions.modifyPitch(event, value);
-                            }
-
-                            if (this.randomVelocityChk.value == 1) {
-                                var value = this.getRandomVelocity();
-                                functions.modifyVelocity(event, value);
-                                continue;
-                            }
-
-                            if (this.compressVelocityChk.value == 1) {
-
-                                if (MaxVelocity == 127) {
-                                    if (event.velocity < (this.compressLowVelocity.value / 127)) {
-                                        functions.modifyVelocity(event, this.compressLowVelocity.value / 127); continue;
-                                    }
-
-                                    if (event.velocity > (this.compressHighVelocity.value / 127)) {
-                                        functions.modifyVelocity(event, this.compressHighVelocity.value / 127); continue;
-                                    }
-                                }
-
-                                if (MaxVelocity == 1) {
-                                    if (event.velocity < (this.compressLowVelocity.value)) {
-                                        functions.modifyVelocity(event, this.compressLowVelocity.value); continue;
-                                    }
-
-                                    if (event.velocity > (this.compressHighVelocity.value)) {
-                                        functions.modifyVelocity(event, this.compressHighVelocity.value); continue;
-                                    }
-                                }
-                                continue;
-                            }
-
-                            if (this.changeVelocity.value != 0) {
-                                value = this.getVelocity(event.velocity);
-                                functions.modifyVelocity(event, value);
-                                continue;
-                            }
-                        }
-                        // ------------------------------------------------------------------------
-                        if (this.Pitch3.value == event.pitch) {
-                            this.filterAry.push(event);
-
-                            value = this.getNewPitch(event.pitch);
-                            if (value != event.pitch) {
-                                functions.modifyPitch(event, value);
-                            }
-
-                            if (this.randomVelocityChk.value == 1) {
-                                var value = this.getRandomVelocity();
-                                functions.modifyVelocity(event, value);
-                                continue;
-                            }
-
-                            if (this.compressVelocityChk.value == 1) {
-                                if (MaxVelocity == 127) {
-                                    if (event.velocity < (this.compressLowVelocity.value / 127))
-                                    { functions.modifyVelocity(event, this.compressLowVelocity.value / 127); continue; }
-
-                                    if (event.velocity > (this.compressHighVelocity.value / 127))
-                                    { functions.modifyVelocity(event, this.compressHighVelocity.value / 127); continue; }
-                                }
-
-                                if (MaxVelocity == 1) {
-                                    if (event.velocity < (this.compressLowVelocity.value))
-                                    { functions.modifyVelocity(event, this.compressLowVelocity.value); continue; }
-
-                                    if (event.velocity > (this.compressHighVelocity.value))
-                                    { functions.modifyVelocity(event, this.compressHighVelocity.value); continue; }
-                                }
-                                continue;
-                            }
-
                             if (this.changeVelocity.value != 0) {
                                 value = this.getVelocity(event.velocity);
                                 functions.modifyVelocity(event, value);
@@ -409,7 +318,7 @@ function performTask() {
                     }
                     break;
 
-                // ─────────────────────  FILTER 4: PITCH + VELOCITY HIGHER AND LOWER THAN ─────────────────────────────────────────────────
+                // ─────────────────────  FILTER 4: PITCH + VELOCITY HIGHER AND LOWE THAN ─────────────────────────────────────────────────
 
                 case "4":
                     while (!iterator.done()) {
@@ -475,7 +384,7 @@ function performTask() {
             context.editor.showSelection(true);
 
 
-        }   // --- close buttonApply()
+        }   // --- close buttonExecuteEdit()
     }       // --- close this.ParamChanged()
 
 
@@ -530,7 +439,7 @@ function performTask() {
     //                                          FILE FUNCTIONS
     // ***********************************************************************************************************
     
-    // this file is where the default pitch and velocity filter settings are stored
+    // this file is where the default pitch and velocity filter settings are store
     this.getSettingsFile = function () {
         return Host.Url("local://$USERCONTENT/logicaledit.txt");
     }
@@ -540,7 +449,7 @@ function performTask() {
         
         var defaultValues = new Array;
         
-        defaultValues.push(String(this.Pitch1.string));
+        defaultValues.push(String(this.Pitch1.value));
         defaultValues.push(String(this.Pitch2.string));
         defaultValues.push(String(this.Pitch3.string));
         defaultValues.push(String(this.Pitch4.string));
@@ -589,7 +498,7 @@ function performTask() {
         }
 
         if (defaultValues.length >= 13) {
-            this.Pitch1.string =   defaultValues[0]
+            this.Pitch1.value =    defaultValues[0]
             this.Pitch2.string =   defaultValues[1]
             this.Pitch3.string =   defaultValues[2]
             this.Pitch4.string =   defaultValues[3]
@@ -771,19 +680,10 @@ function performTask() {
             var event = iterator.next()
             this.originalSelection.push(event)
         }
-        
-        // *** likely unnecessary here, it happens in the functions that need it anyway
+
         context.functions.executeImmediately = true;
 
-        /*  Launch the UI
-            The nagging question is how to run a non-modal form, which would work better.
-            You can see an example of one in the Soundcloud extension which runs normal,
-            not application modal.  "Dialog" in and of itself may imply modality and there
-            might be another method runForm() or something which allows that, but the 
-            Soundcloud extension is protected and can't be studied.
-            
-            TODO:   Try various guesses below and see if I get lucky.
-        */
+        // run the UI
         Host.GUI.runDialog(Host.GUI.Themes.getTheme(kPackageID), "LogicalEditor", this);
 
         return Host.Results.kResultOk;
@@ -794,5 +694,10 @@ function beginEdit()
 {
     return new performTask;
 }
+
+
+
+
+
 
 
