@@ -96,7 +96,7 @@ function performTask() {
             // create array to hold the filtered items for the view selection option
             this.filterAry = [];
 
-            // this.context is created on start to capture the current context
+            // this.context is set on start to capture the current context
             var context = this.context
             var editor = context.editor;
             var iterator = context.iterator;
@@ -106,16 +106,14 @@ function performTask() {
             if (!editor || !iterator || !functions)
                 return Host.Results.kResultFailed;
  
-            // editor command.  execute, temp disable selection in editors
-            // this may be the only way to real time update   
             context.functions.executeImmediately = true;
 
             // this may be the only way to real time update, to disable
-            // selection and then re-enable, causing a refresh?
+            // selection and then re-enable, causing a refresh(?)
             context.editor.showSelection(false);
             context.editor.selection.showHideSuspended = true;
 
-            // the iterator is used multiple times per session some
+            // the iterator is used multiple times per session
             // always set .first() for every Apply action
             iterator.first();
 
@@ -155,7 +153,7 @@ function performTask() {
 
                             //////////  RANDOMIZE VELOCITY /////////////////////////////
                             // if the randomize check box is checked, get a random value
-                            // getRandomVelocity() is in te Helper Functions section
+                            // getRandomVelocity() is in the Helper Functions section
                             if (this.randomVelocityChk.value == 1) {
                                 var value = this.getRandomVelocity();
                                 functions.modifyVelocity(event, value);
@@ -411,7 +409,7 @@ function performTask() {
                     }
                     break;
 
-                // ─────────────────────  FILTER 4: PITCH + VELOCITY HIGHER AND LOWE THAN ─────────────────────────────────────────────────
+                // ─────────────────────  FILTER 4: PITCH + VELOCITY HIGHER AND LOWER THAN ─────────────────────────────────────────────────
 
                 case "4":
                     while (!iterator.done()) {
@@ -477,7 +475,7 @@ function performTask() {
             context.editor.showSelection(true);
 
 
-        }   // --- close buttonExecuteEdit()
+        }   // --- close buttonApply()
     }       // --- close this.ParamChanged()
 
 
@@ -532,7 +530,7 @@ function performTask() {
     //                                          FILE FUNCTIONS
     // ***********************************************************************************************************
     
-    // this file is where the default pitch and velocity filter settings are store
+    // this file is where the default pitch and velocity filter settings are stored
     this.getSettingsFile = function () {
         return Host.Url("local://$USERCONTENT/logicaledit.txt");
     }
